@@ -79,6 +79,10 @@ export class AppComponent {
     if (typeof localStorage !== 'undefined') localStorage.setItem('dps-theme', this.darkMode() ? 'dark' : 'light');
     if (typeof document !== 'undefined') document.documentElement.classList.toggle('dark', this.darkMode());
   }
+  ngAfterViewInit() { this.updatePageName(); }
+  private updatePageName() {
+    if (typeof window !== 'undefined') this.routeName.set(this.names[window.location.pathname] ?? 'Guía técnica');
+  }
   toggleMobile() { this.mobileMenu.update(v => !v); }
   closeMobile() { this.mobileMenu.set(false); }
   onSearch(event: Event) { this.searchQuery.set((event.target as HTMLInputElement).value); }
@@ -95,7 +99,7 @@ export class AppComponent {
       ['/fuentes',['fuentes','referencias','nvd','cve','owasp','php.net']]
     ];
     const match = links.find(([, terms]) => terms.some(term => term.includes(query) || query.includes(term)));
-    if (match && typeof window !== 'undefined') window.location.href = match[0];
-    else if (typeof window !== 'undefined') window.location.href = '/verificacion';
+    if (match && typeof window !== 'undefined') { window.location.href = match[0]; this.searchQuery.set(''); }
+    else if (typeof window !== 'undefined') { window.location.href = '/verificacion'; this.searchQuery.set(''); }
   }
 }

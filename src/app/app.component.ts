@@ -10,7 +10,7 @@ import { filter } from 'rxjs';
   <div class="app-shell" [class.dark-theme]="darkMode()">
     <aside class="sidebar" [class.sidebar-open]="mobileMenu()">
       <a class="brand" routerLink="/" (click)="closeMobile()">
-        <span class="brand-mark"><img src="assets/icono-descubriendophp2shelll.png" alt=""></span>
+        <span class="brand-mark">P<span>2</span></span>
         <span class="brand-copy"><strong>Descubriendo</strong><small>PHP2Shell · Investigación</small></span>
       </a>
       <div class="nav-caption">EXPLORAR</div>

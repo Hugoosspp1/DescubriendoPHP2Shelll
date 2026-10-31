@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "descubriendo-php2shelll": {
+    "descubriendo-php2shell": {
       "projectType": "application",
       "root": "",
       "sourceRoot": "src",
@@ -12,7 +12,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/descubriendo-php2shelll",
+            "outputPath": "dist/descubriendo-php2shell",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "descubriendo-php2shelll:build:production"
+              "buildTarget": "descubriendo-php2shell:build:production"
             },
             "development": {
-              "buildTarget": "descubriendo-php2shelll:build:development"
+              "buildTarget": "descubriendo-php2shell:build:development"
             }
           },
           "defaultConfiguration": "development"

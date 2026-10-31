@@ -1,5 +1,5 @@
 {
-  "name": "descubriendo-php2shelll",
+  "name": "descubriendo-php2shell",
   "version": "1.0.0",
   "private": true,
   "scripts": { "ng": "ng", "start": "ng serve", "build": "ng build", "watch": "ng build --watch --configuration development" },

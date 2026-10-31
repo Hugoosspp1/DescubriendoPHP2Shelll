@@ -8,12 +8,12 @@ import { ForensicsPageComponent } from './pages/forensics-page.component';
 import { SourcesPageComponent } from './pages/sources-page.component';
 
 export const routes: Routes = [
-  { path: '', component: HomePageComponent, title: 'Inicio | DescubriendoPHP2Shelll' },
-  { path: 'incidente', component: IncidentPageComponent, title: 'El incidente | DescubriendoPHP2Shelll' },
-  { path: 'versiones', component: VersionsPageComponent, title: 'Versiones y alcance | DescubriendoPHP2Shelll' },
-  { path: 'soluciones', component: SolutionsPageComponent, title: 'Mitigación | DescubriendoPHP2Shelll' },
-  { path: 'verificacion', component: VerificationPageComponent, title: 'Verificación | DescubriendoPHP2Shelll' },
-  { path: 'forense', component: ForensicsPageComponent, title: 'Análisis forense | DescubriendoPHP2Shelll' },
-  { path: 'fuentes', component: SourcesPageComponent, title: 'Fuentes oficiales | DescubriendoPHP2Shelll' },
+  { path: '', component: HomePageComponent, title: 'Inicio | Descubriendo PHP2Shell' },
+  { path: 'incidente', component: IncidentPageComponent, title: 'El incidente | Descubriendo PHP2Shell' },
+  { path: 'versiones', component: VersionsPageComponent, title: 'Versiones y alcance | Descubriendo PHP2Shell' },
+  { path: 'soluciones', component: SolutionsPageComponent, title: 'Mitigación | Descubriendo PHP2Shell' },
+  { path: 'verificacion', component: VerificationPageComponent, title: 'Verificación | Descubriendo PHP2Shell' },
+  { path: 'forense', component: ForensicsPageComponent, title: 'Análisis forense | Descubriendo PHP2Shell' },
+  { path: 'fuentes', component: SourcesPageComponent, title: 'Fuentes oficiales | Descubriendo PHP2Shell' },
   { path: '**', redirectTo: '' }
 ];

@@ -77,7 +77,7 @@ php -i</pre>
         <h2>Versiones antiguas y Windows</h2>
         <div class="notice"><strong>Una versión antigua no está protegida por ser antigua</strong>PHP 8.1 y anteriores ya no reciben actualizaciones normales del proyecto. Tu empresa de alojamiento puede haber preparado una corrección propia: pide el aviso y confirma que el paquete está instalado.</div>
         <h3>Nota para Windows</h3>
-        <p class="panel-intro">El 26 de octubre PHP volvió a publicar algunos paquetes de Windows con el sufijo <code>-1</code>. Añadió una corrección para otro problema, CVE-2026-111497, en una pieza que comprime y descomprime datos. Es un fallo distinto de PHP2Shell; si usas Windows, descarga la versión actual desde PHP o tu proveedor.</p>
+        <p class="panel-intro">El 26 de octubre, PHP volvió a publicar los paquetes de Windows <code>8.5.12-1</code>, <code>8.4.27-1</code>, <code>8.3.36-1</code> y <code>8.2.35-1</code>. El sufijo <code>-1</code> indica que se rehizo el paquete para Windows; el número principal de PHP no cambia. Incluye otra corrección, para CVE-2026-111497, en Brotli, una pieza que comprime y descomprime datos. Es un problema separado de PHP2Shell. PHP explica que en Windows puede alcanzarse mediante cURL si está activada la descompresión automática de respuestas; esa opción viene desactivada por defecto en cURL, aunque algunas aplicaciones pueden activarla.</p>
         <a class="text-link" href="https://www.php.net/archive/2026.php" target="_blank" rel="noopener">Avisos recientes de PHP ↗</a>
       </aside>
     </div>

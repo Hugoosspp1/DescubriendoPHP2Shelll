@@ -85,6 +85,17 @@ import { downloadFile } from '../download-file';
       </aside>
     </div>
 
+    <section class="panel evidence-levels" style="margin-top:17px" aria-labelledby="evidence-levels-title">
+      <h2 id="evidence-levels-title">¿Es un intento, una sospecha o una entrada confirmada?</h2>
+      <p class="panel-intro">Un registro puede enseñar que alguien llamó a la puerta, pero no siempre permite saber si consiguió entrar. Compara la hora, el servidor, la petición y lo que hizo el sistema después.</p>
+      <div class="evidence-grid">
+        <article class="evidence-card evidence-low"><span class="evidence-label">Intento observado</span><h3>Una petición extraña o bloqueada</h3><p>Un filtro la detuvo, o aparece un envío raro en los registros. Esto muestra un intento; no demuestra que PHP llegara a ejecutar nada.</p></article>
+        <article class="evidence-card evidence-medium"><span class="evidence-label">Sospecha que requiere revisión</span><h3>Varias señales relacionadas</h3><p>Por ejemplo, una petición extraña seguida de errores PHP, páginas de error y reinicios del servicio. Guarda las pruebas y pide al equipo técnico que las compare.</p></article>
+        <article class="evidence-card evidence-high"><span class="evidence-label">Indicio de alta prioridad</span><h3>Cambios que el equipo no reconoce</h3><p>Un programa iniciado por el servicio web, una cuenta nueva, archivos alterados o conexiones inesperadas después de la petición justifican una investigación urgente.</p></article>
+      </div>
+      <div class="notice"><strong>La confirmación la hace el equipo que analiza el servidor</strong>Una señal aislada no basta para afirmar que hubo una intrusión. Y que no aparezca en un registro tampoco la descarta si ese registro estaba apagado o ya se borró.</div>
+    </section>
+
     <section class="panel" style="margin-top:17px">
       <h2>Qué hacer si encuentras algo sospechoso</h2>
       <div class="timeline">

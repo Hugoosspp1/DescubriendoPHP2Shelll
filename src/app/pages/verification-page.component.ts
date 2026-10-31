@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, DestroyRef, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { downloadFile } from '../download-file';
 import { restoreChecklistProgress, saveChecklistProgress } from '../checklist-storage';
@@ -65,7 +65,7 @@ php artisan about</pre>
         </div>
         <div class="progress-bar"><span [style.width.%]="progress()"></span></div>
         <div class="progress-label"><span>Pasos completados</span><strong>{{completed()}} / {{steps().length}} · {{progress()}}%</strong></div>
-        <div class="inline-actions" style="margin-top:14px"><button class="btn-secondary" (click)="reset()">Reiniciar</button><button class="btn-primary" (click)="download()">Exportar resultados ↓</button><span class="copy-feedback" aria-live="polite">{{feedback()}}</span></div>
+        <div class="inline-actions" style="margin-top:14px"><button class="btn-secondary" (click)="reset()">Reiniciar</button><button class="btn-secondary" (click)="printChecklist()">Imprimir / guardar como PDF</button><button class="btn-primary" (click)="download()">Exportar resultados ↓</button><span class="copy-feedback" aria-live="polite">{{feedback()}}</span></div>
       </section>
 
       <aside class="panel">
@@ -78,6 +78,21 @@ php artisan about</pre>
         <div class="notice"><strong>Dato importante</strong>PHP señala que el modo de Apache con PHP integrado es especialmente arriesgado. También pide actualizar PHP-FPM, otra forma común de ejecutar PHP, y cualquier otra instalación que atienda visitas web.</div>
       </aside>
     </div>
+
+    @if (printSummary()) {
+      <section class="print-checklist-summary" aria-label="Resumen imprimible de la revisión">
+        <p class="print-brand">Descubriendo PHP2Shell · Revisión de TwinTeach</p>
+        <h1>Resumen de comprobación</h1>
+        <p>Fecha del informe: 31 de octubre de 2026</p>
+        <p class="print-progress"><strong>Progreso: {{completed()}} de {{steps().length}} pasos ({{progress()}}%)</strong></p>
+        <ol class="print-checklist-list">
+          @for (step of steps(); track step.id) {
+            <li><strong>{{step.done ? 'Comprobado' : 'Pendiente'}}:</strong> {{step.title}}<p>{{step.description}}</p></li>
+          }
+        </ol>
+        <p class="print-caution">Este resumen muestra únicamente lo que se marcó en la lista. No verifica los servidores ni demuestra por sí solo que estén protegidos.</p>
+      </section>
+    }
 
     <section class="panel" style="margin-top:17px">
       <h2>Cómo saber si el trabajo quedó bien hecho</h2>
@@ -134,7 +149,9 @@ php artisan about</pre>
   `,
 })
 export class VerificationPageComponent {
+  private readonly destroyRef = inject(DestroyRef);
   readonly feedback = signal('');
+  readonly printSummary = signal(false);
   readonly steps = signal([
     { id: 1, title: 'Separar la página Angular del servidor Laravel', description: 'Anotar dónde se muestran las pantallas y dónde funciona PHP.', done: false },
     { id: 2, title: 'Hacer la lista de todos los equipos con PHP', description: 'Incluir web principal, prueba, contenedores y trabajos automáticos.', done: false },
@@ -153,6 +170,9 @@ export class VerificationPageComponent {
 
   constructor() {
     this.steps.update(steps => restoreChecklistProgress('dps-verification-checklist', steps));
+    const closePrintSummary = () => this.printSummary.set(false);
+    window.addEventListener('afterprint', closePrintSummary);
+    this.destroyRef.onDestroy(() => window.removeEventListener('afterprint', closePrintSummary));
   }
 
   toggle(id: number, done: boolean): void {
@@ -175,5 +195,10 @@ export class VerificationPageComponent {
       + '\n';
     downloadFile('verificacion-php2shell.txt', content);
     this.feedback.set('Archivo descargado.');
+  }
+
+  printChecklist(): void {
+    this.printSummary.set(true);
+    requestAnimationFrame(() => window.print());
   }
 }

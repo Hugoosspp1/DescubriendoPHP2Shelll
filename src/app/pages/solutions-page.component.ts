@@ -40,6 +40,19 @@ import { restoreChecklistProgress, saveChecklistProgress } from '../checklist-st
       </aside>
     </div>
 
+    <section class="panel post-update" style="margin-top:17px" aria-labelledby="post-update-title">
+      <h2 id="post-update-title">Después de actualizar, comprueba que TwinTeach sigue funcionando</h2>
+      <p class="panel-intro">El arreglo de PHP y la comprobación de la web son dos tareas distintas. El equipo puede revisar las funciones normales del servicio sin probar a explotar el fallo.</p>
+      <div class="post-update-grid">
+        <article><span>01</span><h3>Prueba las pantallas y la API</h3><p>Abre la web, inicia sesión y comprueba las funciones principales que envían o reciben datos.</p></article>
+        <article><span>02</span><h3>Comprueba formularios y archivos</h3><p>Si TwinTeach permite adjuntar archivos, confirma con archivos de prueba normales que la función sigue trabajando.</p></article>
+        <article><span>03</span><h3>Revisa tareas que siguen activas</h3><p>Confirma que las colas de trabajo, tareas automáticas y copias de prueba también usan el PHP corregido.</p></article>
+        <article><span>04</span><h3>Guarda el resultado</h3><p>Anota las versiones, los servidores reiniciados, la hora y cualquier error que aparezca después del cambio.</p></article>
+      </div>
+      <div class="notice"><strong>No es necesario probar el exploit en la web real</strong>Una prueba de ataque puede afectar a la disponibilidad y no demuestra que el sistema esté protegido. Confirma la versión y el paquete con el proveedor y revisa los registros.</div>
+      <a class="text-link" routerLink="/verificacion">Abrir la lista completa de comprobación →</a>
+    </section>
+
     <section class="panel" style="margin-top:17px">
       <h2>Medidas temporales mientras llega la actualización</h2>
       <p class="panel-intro">PHP publicó estos cambios para reducir algunas formas de provocar el fallo. Debe aplicarlos quien administra el servidor, y comprobarlos allí mismo. No convierten una versión vulnerable en una versión corregida.</p>

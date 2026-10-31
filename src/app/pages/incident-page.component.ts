@@ -111,6 +111,42 @@ import { RouterLink } from '@angular/router';
       </div>
       <div class="inline-actions"><a class="text-link" routerLink="/versiones">Ver qué versiones actualizar →</a><a class="text-link" routerLink="/forense">Buscar señales de un ataque →</a></div>
     </section>
+
+    <section class="panel faq-list" style="margin-top:17px" aria-labelledby="incident-faq-title">
+      <h2 id="incident-faq-title">Preguntas que suelen surgir</h2>
+      <details>
+        <summary>¿Se infecta mi ordenador por visitar una web afectada?</summary>
+        <p>PHP2Shell es un fallo del programa que atiende la web desde el servidor. No significa que el ordenador de cada visitante quede infectado por abrir una página. Si un servidor hubiera sido alterado, el equipo técnico debe comprobar qué cambió y qué pudo ver el atacante.</p>
+      </details>
+      <details>
+        <summary>Si la web no tiene un botón para subir archivos, ¿está a salvo?</summary>
+        <p>No lo des por hecho. Una persona puede enviar una petición directamente al servidor aunque la página no muestre un formulario para subir archivos. PHP puede empezar a procesarla antes de que Laravel o la aplicación decidan qué hacer.</p>
+      </details>
+      <details>
+        <summary>¿Actualizar Angular o Laravel corrige este fallo?</summary>
+        <p>No. Angular muestra las pantallas y Laravel organiza la aplicación del servidor, pero el fallo está en el programa PHP. El equipo debe actualizar el PHP que recibe las visitas, reiniciar los servicios y revisar todas las copias.</p>
+      </details>
+      <details>
+        <summary>¿Se sabe si alguien entró en TwinTeach?</summary>
+        <p>Esta web no tiene acceso a los servidores de TwinTeach y no puede confirmarlo. El Centro Canadiense recogió informes públicos de explotación el 27 de octubre; Wiz dijo que no había observado ataques completos exitosos en sus propios datos hasta el 27 de octubre, y AWS había registrado intentos contra sus servidores señuelo. Son observaciones distintas: solo los registros de TwinTeach pueden aclarar qué ocurrió allí.</p>
+      </details>
+      <details>
+        <summary>¿Instalar el arreglo elimina cualquier daño anterior?</summary>
+        <p>Corrige el fallo de PHP, pero no borra automáticamente archivos o cuentas que alguien pudiera haber creado antes. Si aparecen señales de entrada, conserva los registros, avisa al equipo responsable, investiga y cambia las claves que pudieran haberse expuesto después de contener el problema.</p>
+      </details>
+      <details>
+        <summary>¿Un filtro web evita tener que actualizar?</summary>
+        <p>No. Un filtro puede frenar algunas peticiones, pero no ve todos los problemas internos de PHP ni sustituye el arreglo. PHP indica que actualizar es la corrección completa.</p>
+      </details>
+      <details>
+        <summary>¿Qué hago si el servidor usa PHP 8.1 o una versión anterior?</summary>
+        <p>Pregunta al proveedor si preparó e instaló una corrección para ese paquete concreto. PHP ya no publica actualizaciones normales para esas series; si el proveedor no puede confirmar el arreglo, pide un plan para migrar a una versión con mantenimiento.</p>
+      </details>
+      <div class="inline-actions" style="margin-top:12px">
+        <a class="text-link" href="https://www.cyber.gc.ca/en/alerts-advisories/al26-026-critical-vulnerabilities-impacting-php-cve-2026-109618-cve-2026-109619" target="_blank" rel="noopener">Actualización canadiense, 27 oct →</a>
+        <a class="text-link" href="https://www.wiz.io/blog/php2shell-exploitation-so-far" target="_blank" rel="noopener">Datos observados por Wiz →</a>
+      </div>
+    </section>
   `,
 })
 export class IncidentPageComponent {}

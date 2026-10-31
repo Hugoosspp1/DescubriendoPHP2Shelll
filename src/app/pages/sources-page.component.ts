@@ -62,10 +62,23 @@ import { RouterLink } from '@angular/router';
       <div class="source-list">
         <a class="source-link" href="https://aws.amazon.com/blogs/security/amazon-threat-intelligence-identifies-php2shell-exploitation-prior-to-public-disclosure-in-madpot/" target="_blank" rel="noopener"><span class="source-mark">AWS</span><span class="source-info"><strong>AWS · intentos contra servidores señuelo</strong><small>Cuenta cuándo vio intentos y advierte que no sabía si habrían funcionado en sitios reales.</small></span><span class="source-arrow">↗</span></a>
         <a class="source-link" href="https://aws.amazon.com/blogs/security/using-aws-waf-to-apply-mitigations-for-php2shell-rce-vulnerabilities-cve-2026-109618-and-cve-2026-109619/" target="_blank" rel="noopener"><span class="source-mark">AWS</span><span class="source-info"><strong>AWS · filtro web como ayuda temporal</strong><small>Opciones para revisar y limitar envíos a servidores PHP; no sustituyen la actualización.</small></span><span class="source-arrow">↗</span></a>
-        <a class="source-link" href="https://www.php.net/archive/2026.php" target="_blank" rel="noopener"><span class="source-mark">PHP</span><span class="source-info"><strong>Avisos posteriores del proyecto PHP</strong><small>Incluye otro fallo de sesiones (23 oct) y una actualización adicional para Windows (26 oct).</small></span><span class="source-arrow">↗</span></a>
+        <a class="source-link" href="https://www.php.net/archive/2026.php" target="_blank" rel="noopener"><span class="source-mark">PHP</span><span class="source-info"><strong>Avisos posteriores del proyecto PHP</strong><small>Incluye el aviso de sesiones del 23 de octubre y los paquetes de Windows rehechos el 26 de octubre.</small></span><span class="source-arrow">↗</span></a>
         <a class="source-link" href="https://www.cve.org/CVERecord?id=CVE-2026-115560" target="_blank" rel="noopener"><span class="source-mark">CVE</span><span class="source-info"><strong>CVE-2026-115560</strong><small>Ficha pública del otro problema, relacionado con una función para subir archivos.</small></span><span class="source-arrow">↗</span></a>
       </div>
       <div class="notice"><strong>No tomes una dirección como prueba</strong>Algunas direcciones publicadas pueden ser compartidas por muchas personas. Comprueba qué pasó en el servidor antes de bloquearlas o afirmar que hubo una intrusión.</div>
+    </section>
+
+    <section class="panel source-context" style="margin-top:17px" aria-labelledby="source-context-title">
+      <h2 id="source-context-title">Por qué los informes de ataques pueden parecer distintos</h2>
+      <div class="article-body">
+        <p>AWS observó intentos en sus servidores señuelo; eso no prueba que el intento funcionara contra una web real. La actualización del Centro Canadiense del 27 de octubre citó informes públicos de explotación y señaló que CISA había añadido los fallos a su lista de vulnerabilidades usadas en ataques. Wiz, en cambio, dijo que no había observado ataques completos exitosos en sus propios datos hasta el 27 de octubre.</p>
+        <p>Estas afirmaciones describen fuentes y sistemas de observación diferentes: un intento, un informe público y un ataque completo confirmado no significan lo mismo. Ninguna permite saber por sí sola si TwinTeach fue atacado; para eso hay que revisar los registros y los cambios de sus propios servidores.</p>
+      </div>
+      <div class="inline-actions">
+        <a class="text-link" href="https://www.cyber.gc.ca/en/alerts-advisories/al26-026-critical-vulnerabilities-impacting-php-cve-2026-109618-cve-2026-109619" target="_blank" rel="noopener">Actualización canadiense →</a>
+        <a class="text-link" href="https://www.wiz.io/blog/php2shell-exploitation-so-far" target="_blank" rel="noopener">Observaciones de Wiz →</a>
+        <a class="text-link" href="https://aws.amazon.com/blogs/security/amazon-threat-intelligence-identifies-php2shell-exploitation-prior-to-public-disclosure-in-madpot/" target="_blank" rel="noopener">Intentos observados por AWS →</a>
+      </div>
     </section>
 
     <section class="panel" style="margin-top:17px">

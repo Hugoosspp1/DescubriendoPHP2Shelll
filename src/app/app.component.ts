@@ -75,6 +75,7 @@ interface SearchDestination {
           </div>
         </header>
 
+        <div class="review-meta"><span><strong>Información revisada:</strong> 31 de octubre de 2026</span><a routerLink="/fuentes">Ver fuentes y avisos</a></div>
         <section class="page-content"><router-outlet /></section>
         <footer class="site-footer"><span>Descubriendo PHP2Shell</span><span>Guía sencilla · Comprueba siempre la información con el proveedor</span><a routerLink="/fuentes">Fuentes oficiales ↗</a></footer>
       </main>

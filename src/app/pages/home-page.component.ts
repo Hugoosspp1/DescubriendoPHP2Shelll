@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   template: `
     <div class="home-page">
       <section class="landing-hero">
-        <img class="landing-photo" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=90" alt="Arquitectura contemporánea junto al mar, con luz cálida de atardecer">
+        <img class="landing-photo" src="assets/php-code-editor.png" alt="Código PHP en un editor oscuro">
         <div class="landing-shade"></div>
         <div class="hero-meta"><span>INFORME DE SEGURIDAD · PHP2SHELL</span><span>REVISADO 31 OCT 2026</span></div>
         <div class="landing-copy">
@@ -20,6 +20,7 @@ import { RouterLink } from '@angular/router';
           </div>
         </div>
         <div class="hero-side-note">ACTUALIZA PHP<br>Y REVISA LOS<br>REGISTROS DE<br>LOS MESES PREVIOS.</div>
+        <div class="image-caption">Imagen ilustrativa; no es el código del fallo</div>
         <div class="hero-bottom-fade"></div>
       </section>
 
@@ -67,6 +68,30 @@ import { RouterLink } from '@angular/router';
             <div class="article-body"><p><strong>Laravel:</strong> herramientas con las que se construye el servidor de la aplicación usando PHP.</p><p><strong>CVE:</strong> número público para identificar un fallo de seguridad.</p><p><strong>Arreglo o parche:</strong> actualización del fabricante que corrige un fallo del programa.</p></div>
           </div>
           <p class="panel-intro">En TwinTeach, que use Angular no evita revisar el PHP del servidor Laravel. Son partes diferentes y se comprueban por separado.</p>
+        </section>
+
+        <section class="panel system-map" style="margin-top:18px" aria-labelledby="system-map-title">
+          <h2 id="system-map-title">El recorrido de TwinTeach, en un dibujo</h2>
+          <p class="panel-intro">La vulnerabilidad se corrige en el servidor donde funciona PHP. Cambiar la parte visual no sustituye esa actualización.</p>
+          <div class="system-flow" role="img" aria-label="El navegador muestra la página con Angular; el servidor usa Laravel y PHP para responder; la base de datos guarda la información.">
+            <div class="flow-step"><span class="flow-icon">01</span><strong>Tu navegador</strong><small>Muestra las pantallas</small><b>Angular</b></div>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <div class="flow-step flow-step-risk"><span class="flow-icon">02</span><strong>Servidor de TwinTeach</strong><small>Recibe peticiones y prepara respuestas</small><b>Laravel + PHP</b></div>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <div class="flow-step"><span class="flow-icon">03</span><strong>Base de datos</strong><small>Guarda la información del servicio</small><b>Datos</b></div>
+          </div>
+          <p class="flow-caption"><strong>¿Dónde se revisa PHP2Shell?</strong> En el PHP del servidor y en todas sus copias; Angular por sí solo no ejecuta ese PHP.</p>
+        </section>
+
+        <section class="panel beginner-guide" style="margin-top:18px" aria-labelledby="beginner-guide-title">
+          <h2 id="beginner-guide-title">Si no sabes dónde se gestiona PHP</h2>
+          <p class="panel-intro">No hace falta que instales nada ni que pruebes el fallo. Sigue estos tres pasos o envía la pregunta al equipo responsable.</p>
+          <div class="beginner-steps">
+            <article class="beginner-step"><span>1</span><div><h3>Encuentra quién aloja TwinTeach</h3><p>Pregunta en el centro o a la persona que administra la web. Si hay una empresa de alojamiento, su soporte también puede identificar los servidores.</p></div></article>
+            <article class="beginner-step"><span>2</span><div><h3>Pide la versión que atiende la web</h3><p>Solicita la versión de PHP que usa el servicio web y la API. Una versión vista en una terminal puede ser distinta de la que recibe las visitas.</p></div></article>
+            <article class="beginner-step"><span>3</span><div><h3>Pide confirmación del arreglo</h3><p>Que indiquen qué actualización instalaron, en qué servidores y cuándo los reiniciaron. Pide que revisen también las copias de prueba y las tareas automáticas.</p></div></article>
+          </div>
+          <div class="inline-actions"><a class="btn-primary" routerLink="/verificacion">Abrir los pasos detallados</a><a class="btn-secondary" routerLink="/fuentes">Consultar avisos oficiales</a></div>
         </section>
 
         <div class="section-title-row" style="margin-top:27px"><div><h2>Explora el informe</h2><p>De la descripción técnica a la comprobación y preservación de evidencias.</p></div></div>
